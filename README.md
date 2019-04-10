@@ -1,6 +1,6 @@
 # pethop-test
 
-Spring MVC 4 + MyBatis 3 + ExtJS 4 CRUD Grid Example
+Spring MVC 4 + MyBatis 3 + ExtJS CRUD Grid Example
 
 Приложение основано на Spring framework с использованием SpringMVC.
 Объекты домена сериализуются и десериализуются с помощью Jackson JSON (ExtData и ExtResponse).
