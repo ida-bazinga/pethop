@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ru.ida.springmvc.mapper.OneClickPurchaseMapper">
+    <cache/>
+
+    <select id="getOneClickPurchaseList" resultType="ru.ida.springmvc.model.OneClickPurchase">
+        SELECT *
+        FROM oneclickpurchase
+    </select>
+
+    <insert id="addOneClickPurchase" parameterType="ru.ida.springmvc.model.OneClickPurchase" useGeneratedKeys="true" keyProperty="uid"
+            keyColumn="uid">
+        INSERT INTO oneclickpurchase
+        (name, phone, email)
+        VALUES
+            (#{name}, #{phone}, #{email})
+    </insert>
+
+    <update id="updateOneClickPurchase" parameterType="ru.ida.springmvc.model.OneClickPurchase" useGeneratedKeys="true" keyProperty="uid"
+            keyColumn="uid">
+        UPDATE oneclickpurchase
+        SET
+            name  = #{name},
+            phone = #{phone},
+            email = #{email}
+        WHERE uid = #{uid}
+    </update>
+
+    <delete id="deleteOneClickPurchase">
+        DELETE FROM oneclickpurchase
+        WHERE uid = #{uid}
+    </delete>
+
+</mapper>
