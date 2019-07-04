@@ -1,25 +1,9 @@
-<<<<<<< HEAD
-# Eclipse
-.classpath
-.project
-.settings/
-
-=======
->>>>>>> 7aa9bbb3ee28266310b9cb3976e46daac4b3b4e3
 # Intellij
 .idea/
 *.iml
 *.iws
 
-<<<<<<< HEAD
-# Mac
-.DS_Store
+# Maven
+log/
+target/
 
-# Maven
-log/
-target/
-=======
-# Maven
-log/
-target/
->>>>>>> 7aa9bbb3ee28266310b9cb3976e46daac4b3b4e3
