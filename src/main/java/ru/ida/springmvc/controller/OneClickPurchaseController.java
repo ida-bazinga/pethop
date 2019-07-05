@@ -29,7 +29,7 @@ public class OneClickPurchaseController {
         return mav;
     }
 
-    @RequestMapping(value = "/oneclickpurchase/view", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody @RequestMapping(value = "/oneclickpurchase/view", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)	
     public ExtResponse getOneClickPurchases() {
         ExtData responseData = new ExtData();
         List<OneClickPurchase> oneclickpurchases = oneClickPurchaseuserService.getOneClickPurchaseList();
@@ -40,7 +40,7 @@ public class OneClickPurchaseController {
     }
 
     //new
-    @RequestMapping(value = "/oneclickpurchase/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody @RequestMapping(value = "/oneclickpurchase/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ExtResponse create(@RequestBody OneClickPurchase[] oneclickpurchases) {
         ExtData responseData = new ExtData();
         List<OneClickPurchase> addedOneClickPurchases = oneClickPurchaseuserService.createOneClickPurchases(oneclickpurchases);
@@ -51,7 +51,7 @@ public class OneClickPurchaseController {
     }
 
     //update
-    @RequestMapping(value = "/oneclickpurchase/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody @RequestMapping(value = "/oneclickpurchase/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ExtResponse update(@RequestBody OneClickPurchase[] oneclickpurchases) {
         ExtData responseData = new ExtData();
         List<OneClickPurchase> addedOneClickPurchases = oneClickPurchaseuserService.updateOneClickPurchases(oneclickpurchases);
@@ -62,7 +62,7 @@ public class OneClickPurchaseController {
     }
 
     //delete 
-    @RequestMapping(value = "/oneclickpurchase/destroy", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody @RequestMapping(value = "/oneclickpurchase/destroy", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ExtResponse delete(@RequestBody long[] uids) {
         oneClickPurchaseuserService.deleteOneClickPurchases(uids);
         ExtData responseData = new ExtData();
