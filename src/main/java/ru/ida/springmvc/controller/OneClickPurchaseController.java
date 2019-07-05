@@ -30,10 +30,7 @@ public class OneClickPurchaseController {
     }
 
     @RequestMapping(value = "/oneclickpurchase/view", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public
-    @ResponseBody
-    ExtResponse getOneClickPurchases() {
-
+    public ExtResponse getOneClickPurchases() {
         ExtData responseData = new ExtData();
         List<OneClickPurchase> oneclickpurchases = oneClickPurchaseuserService.getOneClickPurchaseList();
         responseData.add(oneclickpurchases);
@@ -44,9 +41,7 @@ public class OneClickPurchaseController {
 
     //new
     @RequestMapping(value = "/oneclickpurchase/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public
-    @ResponseBody
-    ExtResponse create(@RequestBody OneClickPurchase[] oneclickpurchases) {
+    public ExtResponse create(@RequestBody OneClickPurchase[] oneclickpurchases) {
         ExtData responseData = new ExtData();
         List<OneClickPurchase> addedOneClickPurchases = oneClickPurchaseuserService.createOneClickPurchases(oneclickpurchases);
         responseData.add(addedOneClickPurchases);
@@ -57,9 +52,7 @@ public class OneClickPurchaseController {
 
     //update
     @RequestMapping(value = "/oneclickpurchase/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public
-    @ResponseBody
-    ExtResponse update(@RequestBody OneClickPurchase[] oneclickpurchases) {
+    public ExtResponse update(@RequestBody OneClickPurchase[] oneclickpurchases) {
         ExtData responseData = new ExtData();
         List<OneClickPurchase> addedOneClickPurchases = oneClickPurchaseuserService.updateOneClickPurchases(oneclickpurchases);
         responseData.add(addedOneClickPurchases);
@@ -70,9 +63,7 @@ public class OneClickPurchaseController {
 
     //delete 
     @RequestMapping(value = "/oneclickpurchase/destroy", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public
-    @ResponseBody
-    ExtResponse delete(@RequestBody long[] uids) {
+    public ExtResponse delete(@RequestBody long[] uids) {
         oneClickPurchaseuserService.deleteOneClickPurchases(uids);
         ExtData responseData = new ExtData();
         responseData.add(uids.length);
